@@ -12,6 +12,6 @@ interface PersonDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addPerson(person: Person)
 
-    @Query("SELECT * FROM person_table ORDER BY firstName ASC")
+    @Query("SELECT * FROM person_table ORDER BY id ASC")
     fun readAllData(): LiveData<List<Person>>
 }
